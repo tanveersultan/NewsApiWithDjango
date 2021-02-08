@@ -1,0 +1,47 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>   
+   <nav class="navbar navbar-expand-sm navbar-light bg-light">
+       <a class="navbar-brand" href="#">News Application</a>
+       <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+           aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="collapsibleNavId">
+           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              
+           </ul>
+           
+       </div>
+   </nav>
+       
+   <div class="container">
+    <div class="row">   
+            {% for hl , des , img , aut , url , content ,date in mylist %}
+            <div class="col-md-4 ">
+                <img src="{{img}}" style="width: 350px;" alt="">
+                <h2>{{hl}}{{ value|linebreaks }}</h2>
+                <p><span class="font-weight-bold pull-left">Author</span> {{aut}}  <span class="font-weight-bold ">Date</span> {{date}} </p>
+                <p class="card-text"> {{ des }}{{ value|linebreaks }}</p>
+                <p class="card-text"> {{ content }}{{ value|linebreaks }}</p><br>
+                <a href="{{url}}{{ value|linebreaks }}" class="btn  btn-success btn-sm"> More Read </a><br><br>
+            </div>
+            {%endfor %}
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+   </div>
+    
+</body>
+</html>
